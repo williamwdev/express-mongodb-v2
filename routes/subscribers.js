@@ -8,7 +8,7 @@ const Subscriber = require('../models/subscriber');
 router.get('/', async (req, res) => {
   try {
     const subscribers = await Subscriber.find();
-    console.log('subscribers =', subscribers);
+    // console.log('subscribers =', subscribers);
     res.json(subscribers);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -47,7 +47,7 @@ router.patch('/:id', getSubscriber, async (req, res) => {
   try {
     const updatedSubscriber = await res.subscriber.save();
     res.json(updatedSubscriber);
-  } catch(err) {
+  } catch (err) {
     res.status(400).json({ message: err.message });
   }
 });

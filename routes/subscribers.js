@@ -8,7 +8,7 @@ const Subscriber = require('../models/subscriber');
 router.get('/', async (req, res) => {
   try {
     const subscribers = await Subscriber.find();
-    // console.log(subscribers)
+    console.log('subscribers =', subscribers);
     res.json(subscribers);
   } catch (err) {
     res.status(500).json({ message: err.message });
@@ -17,9 +17,7 @@ router.get('/', async (req, res) => {
 
 // Get one subscriber
 router.get('/:id', getSubscriber, (req, res) => {
-  // console.log('/:id GET', res.json(res.subscriber));
   res.json(res.subscriber);
-  console.log('get ID clicked')
 });
 
 // Create one subscriber
@@ -69,11 +67,12 @@ async function getSubscriber(req, res, next) {
   try {
     subscriber = await Subscriber.findById(req.params.id);
     if (subscriber === null) {
-      return res.status(404).json({ message: 'Subscriber not found' });
+      return res.status(404).json({ message: 'Cant find subscriber' });
     }
   } catch (err) {
     return res.status(500).json({ message: err.message });
   }
+
   res.subscriber = subscriber;
   next();
 }

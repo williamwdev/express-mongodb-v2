@@ -1,8 +1,9 @@
 GET http://localhost:3000/subscribers
+// returns an array of objects containing the correct data sets
 
 ###
 
-GET http://localhost:3000/subscribers/5e49eebfce6ad66208796a05
+GET http://localhost:3000/subscribers/5e48fd6ffc81d80ed86241c3
 
 ###
 
@@ -13,10 +14,11 @@ Content-Type: application/json
   "name": "Testing",
   "subscribedChannel": "Test Channel"
 }
+// works as intended
 
 ###
 
-DELETE http://localhost:3000/subscribers/5e48fd6ffc81d80ed86241c3
+DELETE http://localhost:3000/subscribers/5e49eebfce6ad66208796a05
 
 ###
 

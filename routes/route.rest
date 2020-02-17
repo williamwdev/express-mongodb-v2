@@ -3,28 +3,32 @@ GET http://localhost:3000/subscribers
 
 ###
 
-GET http://localhost:3000/subscribers/5e48fd6ffc81d80ed86241c3
+GET http://localhost:3000/subscribers/5e4a4223972852541c71cb09
+// works as intended finally after commenting out 'use strict'
 
 ###
 
 POST http://localhost:3000/subscribers
 Content-Type: application/json
-
+// space here is necessary in order for this to work https://github.com/Huachao/vscode-restclient/issues/430#issuecomment-538784585
 {
-  "name": "Testing",
-  "subscribedChannel": "Test Channel"
+  "name": "Pancake",
+  "subscribedChannel": "Pancakes Channel"
 }
 // works as intended
 
 ###
 
-DELETE http://localhost:3000/subscribers/5e49eebfce6ad66208796a05
+DELETE http://localhost:3000/subscribers/5e49ebc12446a635b873bc7b
+// works as intended
 
 ###
 
-PATCH http://localhost:3000/subscribers/5e49ebc12446a635b873bc7b
+PATCH http://localhost:3000/subscribers/5e4a513cdee8a32808187af5
 Content-Type: application/json 
 
 {
-  "name": "Pancake"
+  "name": "Pizza",
+  "subscribedChannel": "Pizza Channel"
 }
+// works as intended

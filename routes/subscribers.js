@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 const express = require('express');
 const router = express.Router();
@@ -47,7 +47,7 @@ router.patch('/:id', getSubscriber, async (req, res) => {
   try {
     const updatedSubscriber = await res.subscriber.save();
     res.json(updatedSubscriber);
-  } catch {
+  } catch(err) {
     res.status(400).json({ message: err.message });
   }
 });

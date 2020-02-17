@@ -16,7 +16,10 @@ router.get('/', async (req, res) => {
 });
 
 // Get one subscriber
-router.get('/:id', async (req, res) => {});
+router.get('/:id', async (req, res) => {
+  console.log('/:id GET', res.json(res.subscriber))
+  res.json(res.subscriber)
+});
 
 // Create one subscriber
 router.post('/', async (req, res) => {
@@ -39,6 +42,7 @@ router.patch('/:id', (req, res) => {});
 
 // Delete one subscriber
 router.delete('/:id', (req, res) => {});
+
 
 // middleware function for getting subscriber obj by ID
 async function getSubscriber(req, res, next) {

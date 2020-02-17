@@ -12,4 +12,7 @@ Building a RESTful API with Node, Express & MongoDB
 - ExpressJS
 - MongoDB
 
-## Resources
+## Getting Started
+- Run `npm install` to install all dependencies locally
+- Run `npm run devStart` to start nodemon server
+- Use `routes.rest` file to test calls to the database or use Postman

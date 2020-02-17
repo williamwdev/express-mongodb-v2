@@ -2,7 +2,7 @@ GET http://localhost:3000/subscribers
 
 ###
 
-GET http://localhost:3000/subscribers/1
+GET http://localhost:3000/subscribers/5e49eebfce6ad66208796a05
 
 ###
 
@@ -10,19 +10,19 @@ POST http://localhost:3000/subscribers
 Content-Type: application/json
 
 {
-  "name": "William",
-  "subscribedChannel": "Willys Channel"
+  "name": "Testing",
+  "subscribedChannel": "Test Channel"
 }
 
 ###
 
-DELETE http://localhost:3000/subscribers/1
+DELETE http://localhost:3000/subscribers/5e48fd6ffc81d80ed86241c3
 
 ###
 
-PATCH http://localhost:3000/subscribers/5d3e144ecb4be0bfc4c25ffa
+PATCH http://localhost:3000/subscribers/5e49ebc12446a635b873bc7b
 Content-Type: application/json 
 
 {
-  "name": "Tommy"
+  "name": "Pancake"
 }

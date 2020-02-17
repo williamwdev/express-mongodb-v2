@@ -16,9 +16,10 @@ router.get('/', async (req, res) => {
 });
 
 // Get one subscriber
-router.get('/:id', async (req, res) => {
-  console.log('/:id GET', res.json(res.subscriber));
+router.get('/:id', getSubscriber, (req, res) => {
+  // console.log('/:id GET', res.json(res.subscriber));
   res.json(res.subscriber);
+  console.log('get ID clicked')
 });
 
 // Create one subscriber
@@ -38,7 +39,7 @@ router.post('/', async (req, res) => {
 });
 
 // Update one subscriber
-router.patch('/:id', async (req, res) => {
+router.patch('/:id', getSubscriber, async (req, res) => {
   if (req.body.name !== null) {
     res.subscriber.name = req.body.name;
   }
@@ -54,7 +55,7 @@ router.patch('/:id', async (req, res) => {
 });
 
 // Delete one subscriber
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', getSubscriber, async (req, res) => {
   try {
     await res.subscriber.remove();
     res.json({ message: 'Deleted This Subscriber' });
